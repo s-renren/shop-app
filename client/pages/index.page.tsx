@@ -4,36 +4,31 @@ import styles from './index.module.css';
 const Home = () => {
   const [wishList, setWishList] = useState<string>('');
   const [wishListItems, setWishListItems] = useState<string[]>([]);
-  const [wishListOpen, setWishListOpen] = useState<boolean>(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setWishList(event.target.value);
   };
+
   const addWishListButton = () => {
     if (wishList.trim() !== '') {
       setWishListItems([...wishListItems, wishList]);
       setWishList('');
     }
   };
-  const ClickMakeList = () => {
-    if (wishListOpen === true) {
-      setWishListOpen(false);
-    } else setWishListOpen(true);
-  };
 
   return (
     <div className={styles.container}>
-      <div onClick={ClickMakeList} className={styles.mainpageFunctions}>＋リストを作成する</div>
-      <div className={!wishListOpen ? styles.wishListClose : styles.wishListOpen}>
+      <div>リストを作る</div>
+      <div className={styles.wishListOpen}>
         <div>
           <input
-            placeholder="+欲しいものリスト"
+            placeholder="+名前"
             value={wishList}
             onChange={handleInputChange}
             className={styles.inputWishList}
           />
           <button onClick={addWishListButton} className={styles.buttonWishList}>
-            addWishList
+            Add to Wish List
           </button>
         </div>
         <h3>
