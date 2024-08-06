@@ -18,8 +18,8 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      <div>リストを作る</div>
-      <div className={styles.wishListOpen}>
+      <div className={styles.wishListContainer}>
+        <h2>リストを作る</h2>
         <div>
           <input
             placeholder="+名前"

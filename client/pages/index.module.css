@@ -7,11 +7,7 @@
   background: #f8f8f8;
 }
 
-.wishListClose {
-  display: none;
-}
-
-.wishListOpen {
+.wishListContainer {
   display: flex;
   flex-direction: column;
 }
