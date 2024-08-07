@@ -25,7 +25,7 @@ model Task {
   authorId  String
 }
 
-model WishListEntity {
+model WishList {
   id    Int     @id @default(autoincrement())
   name  String
   items Items[]
@@ -35,5 +35,5 @@ model Items {
   id          Int            @id @default(autoincrement())
   description String
   wishlistId  Int
-  wishlist    WishListEntity @relation(fields: [wishlistId], references: [id])
+  wishlist    WishList @relation(fields: [wishlistId], references: [id])
 }
