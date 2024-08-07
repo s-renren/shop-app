@@ -1,9 +1,8 @@
-export type Items = {
-  id: number;
-  description: string;
-};
+// model/work.ts
+import type { Items as PrismaItems, WishListEntity as PrismaWishListEntity } from '@prisma/client';
 
-export type WishListEntity = {
-  name: string;
+export type Items = PrismaItems;
+
+export type WishListEntity = PrismaWishListEntity & {
   items: Items[];
 };
