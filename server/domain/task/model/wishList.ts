@@ -1,9 +1,11 @@
-export type Items = {
+export type WishListEntity = {
   id: number;
-  description: string;
+  name: string;
+  items: ItemEntity[];
 };
 
-export type WishListEntity = {
-  name: string;
-  items: Items[];
+export type ItemEntity = {
+  id: number;
+  url: string;
+  wishListId: number;
 };
