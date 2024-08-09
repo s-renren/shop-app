@@ -1,9 +1,25 @@
 import type { DefineMethods } from 'aspida';
-import type { HoshiimoListEntity, WishListEntity } from 'domain/wishList/model/wishList';
+
+type WishList = {
+  id: number;
+  name: string;
+  items: Item[];
+};
+
+type Item = {
+  id: number;
+  url: string;
+  wishListId: number;
+};
+
+type HoshiimoList = {
+  id: number;
+  name: string;
+};
 
 export type Methods = DefineMethods<{
   get: {
-    resBody: WishListEntity[];
+    resBody: WishList[];
   };
   post: {
     reqBody: {
@@ -11,7 +27,7 @@ export type Methods = DefineMethods<{
       // url?: string;
       // wishListId?: number;
     };
-    resBody: HoshiimoListEntity;
+    resBody: HoshiimoList;
     // | ItemEntity;
   };
 }>;
