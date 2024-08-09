@@ -1,5 +1,5 @@
 import type { Item, WishList } from '@prisma/client';
-import type { WishListEntity } from 'domain/task/model/wishList';
+import type { WishListEntity } from 'domain/wishList/model/wishList';
 import { prismaClient } from 'service/prismaClient';
 
 export const createWishList = async (name: string): Promise<WishList> => {
@@ -21,7 +21,7 @@ export const getAllWishLists = async (): Promise<WishListEntity[]> => {
   return prismaClient.wishList
     .findMany({
       include: {
-        items: true, // Prismaの設定で`items`が正しく取得されるようにする
+        items: true,
       },
     })
     .then((wishLists) =>

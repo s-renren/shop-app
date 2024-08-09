@@ -11,6 +11,6 @@ export type ItemEntity = {
 };
 
 export type HoshiimoListEntity = {
-  id: number
-  name:string;
-}
+  id: number;
+  name: string;
+};
