@@ -37,3 +37,8 @@ model Item {
   wishListId Int
   wishList   WishList @relation(fields: [wishListId], references: [id])
 }
+
+model HoshiimoList {
+  id   Int    @id @default(autoincrement())
+  name String
+}

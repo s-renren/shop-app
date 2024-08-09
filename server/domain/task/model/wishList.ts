@@ -9,3 +9,8 @@ export type ItemEntity = {
   url: string;
   wishListId: number;
 };
+
+export type HoshiimoListEntity = {
+  id: number
+  name:string;
+}
