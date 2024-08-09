@@ -27,7 +27,7 @@ export default defineController(() => ({
     }
   },
   post: async ({ body }) => {
-    const name = body['name']
+    const name = body['name'];
     const wishList = await prismaClient.wishList.create({
       data: { name },
     });
